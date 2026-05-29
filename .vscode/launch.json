@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Run web example - Debug",
+      "request": "launch",
+      "program": "example/lib/main.dart",
+      "type": "dart",
+      "args": ["-d", "chrome"],
+      "flutterMode": "debug"
+    },
+  ]
+}
