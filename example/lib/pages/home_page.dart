@@ -1,24 +1,21 @@
-import 'package:example/pages/buttons_page.dart';
-import 'package:example/pages/dashboard_page.dart';
 import 'package:example/widgets/theme_switch.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:smart_design_system/smart_design_system.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+  final Widget child;
+  const HomePage({super.key, required this.child});
 
   @override
   State<HomePage> createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
-  int _selectedIndex = 0;
   bool isExpanded = false;
 
-  _onSelect() {
-    setState(() {
-      _selectedIndex = _selectedIndex == 0 ? 1 : 0;
-    });
+  _onSelect(String path) {
+    context.go(path);
   }
 
   @override
@@ -26,21 +23,18 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       body: SmartRail(
         expanded: isExpanded,
+        page: widget.child,
         menus: [
           SmartRailMenu(
             label: 'Dashboard',
             icon: Icons.dashboard,
-            onPressed: _onSelect,
-            page: DashboardPage(),
+            onPressed: () => _onSelect('/dashboard'),
           ),
           SmartRailMenu(
             label: 'Buttons',
             icon: Icons.smart_button_rounded,
-            onPressed: _onSelect,
-            page: ButtonsPage(),
+            onPressed: () => _onSelect('/buttons'),
           ),
-          SmartRailMenu(label: 'Profile', icon: Icons.person, onPressed: _onSelect),
-          SmartRailMenu(label: 'Logout', icon: Icons.logout, onPressed: _onSelect),
         ],
         trailing: Expanded(
           child: Padding(

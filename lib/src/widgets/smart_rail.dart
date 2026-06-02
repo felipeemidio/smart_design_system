@@ -3,14 +3,12 @@ import 'package:flutter/material.dart';
 class SmartRailMenu {
   final String label;
   final IconData icon;
-  final Widget? page;
 
   final void Function()? onPressed;
 
   const SmartRailMenu({
     required this.label,
     required this.icon,
-    this.page,
     this.onPressed,
   });
 }
@@ -19,9 +17,11 @@ class SmartRail extends StatefulWidget {
   final List<SmartRailMenu> menus;
   final Widget? trailing;
   final bool expanded;
+  final Widget page;
   const SmartRail({
     super.key,
     required this.menus,
+    required this.page,
     this.trailing,
     this.expanded = false,
   });
@@ -53,7 +53,7 @@ class _SmartRailState extends State<SmartRail> {
           },
         ),
         const VerticalDivider(thickness: 1, width: 1),
-        Expanded(child: widget.menus[seletectedIndex].page ?? const Placeholder()),
+        Expanded(child: widget.page),
       ],
     );
   }

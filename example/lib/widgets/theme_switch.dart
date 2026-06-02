@@ -19,12 +19,17 @@ class _ThemeSwitchState extends State<ThemeSwitch> {
     });
   }
 
-  _onToggle(_) {
+  _onToggle(BuildContext context, bool value) {
+    print('value $value active $_active');
+
     setState(() {
-      _active = !_active;
+      _active = value;
+    });
+
+    WidgetsBinding.instance.addPostFrameCallback((_) {
       SmartDesignSystem.of(
         context,
-      ).changeColorScheme(_active ? SmartColors.darkMainScheme : SmartColors.lightMainScheme);
+      ).changeColorScheme(value ? SmartColors.darkMainScheme : SmartColors.lightMainScheme);
     });
   }
 
@@ -33,7 +38,8 @@ class _ThemeSwitchState extends State<ThemeSwitch> {
     return Switch(
       value: _active,
       activeColor: Colors.blueGrey,
-      onChanged: _onToggle,
+      materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+      onChanged: (value) => _onToggle(context, value),
     );
   }
 }
