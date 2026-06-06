@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:smart_design_system/smart_design_system.dart';
 
 abstract class SmartSnackBarUtils {
   static const _kDuration = Duration(seconds: 4);
@@ -10,7 +11,7 @@ abstract class SmartSnackBarUtils {
     return _showSnackBar(
       context,
       message: message,
-      backgroundColor: Theme.of(context).colorScheme.primaryContainer,
+      backgroundColor: SmartDesignSystem.of(context).colorScheme.primaryContainer,
       textStyle: TextStyle(color: Theme.of(context).colorScheme.onPrimaryContainer),
     );
   }
@@ -22,8 +23,8 @@ abstract class SmartSnackBarUtils {
     return _showSnackBar(
       context,
       message: message,
-      backgroundColor: Theme.of(context).colorScheme.errorContainer,
-      textStyle: TextStyle(color: Theme.of(context).colorScheme.onErrorContainer),
+      backgroundColor: SmartDesignSystem.of(context).colorScheme.errorContainer,
+      textStyle: TextStyle(color: SmartDesignSystem.of(context).colorScheme.onErrorContainer),
     );
   }
 
@@ -34,8 +35,8 @@ abstract class SmartSnackBarUtils {
     return _showSnackBar(
       context,
       message: message,
-      backgroundColor: Theme.of(context).colorScheme.tertiaryContainer,
-      textStyle: TextStyle(color: Theme.of(context).colorScheme.onTertiaryContainer),
+      backgroundColor: SmartDesignSystem.of(context).colorScheme.infoContainer,
+      textStyle: TextStyle(color: SmartDesignSystem.of(context).colorScheme.onInfoContainer),
     );
   }
 

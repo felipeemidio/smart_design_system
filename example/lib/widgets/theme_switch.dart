@@ -20,8 +20,6 @@ class _ThemeSwitchState extends State<ThemeSwitch> {
   }
 
   _onToggle(BuildContext context, bool value) {
-    print('value $value active $_active');
-
     setState(() {
       _active = value;
     });
@@ -29,7 +27,7 @@ class _ThemeSwitchState extends State<ThemeSwitch> {
     WidgetsBinding.instance.addPostFrameCallback((_) {
       SmartDesignSystem.of(
         context,
-      ).changeColorScheme(value ? SmartColors.darkMainScheme : SmartColors.lightMainScheme);
+      ).changeColorScheme(value ? defaultDarkSmartColors : defaultLightSmartColors);
     });
   }
 
