@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 
 class SmartRailMenu {
+  final String? id;
   final String label;
   final IconData icon;
 
   final void Function()? onPressed;
 
   const SmartRailMenu({
+    this.id,
     required this.label,
     required this.icon,
     this.onPressed,
@@ -14,6 +16,7 @@ class SmartRailMenu {
 }
 
 class SmartRail extends StatefulWidget {
+  final String? initialMenu;
   final List<SmartRailMenu> menus;
   final Widget? trailing;
   final bool expanded;
@@ -22,6 +25,7 @@ class SmartRail extends StatefulWidget {
     super.key,
     required this.menus,
     required this.page,
+    this.initialMenu,
     this.trailing,
     this.expanded = false,
   });
@@ -31,7 +35,18 @@ class SmartRail extends StatefulWidget {
 }
 
 class _SmartRailState extends State<SmartRail> {
-  int seletectedIndex = 0;
+  late int seletectedIndex;
+
+  @override
+  void initState() {
+    super.initState();
+    if (widget.initialMenu != null) {
+      seletectedIndex = widget.menus.indexWhere((element) => element.id == widget.initialMenu);
+      if (seletectedIndex == -1) {
+        seletectedIndex = 0;
+      }
+    }
+  }
 
   @override
   Widget build(BuildContext context) {

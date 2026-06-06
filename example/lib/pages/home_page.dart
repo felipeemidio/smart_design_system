@@ -22,15 +22,18 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SmartRail(
+        initialMenu: GoRouterState.of(context).uri.toString(),
         expanded: isExpanded,
         page: widget.child,
         menus: [
           SmartRailMenu(
+            id: '/dashboard',
             label: 'Dashboard',
             icon: Icons.dashboard,
             onPressed: () => _onSelect('/dashboard'),
           ),
           SmartRailMenu(
+            id: '/buttons',
             label: 'Buttons',
             icon: Icons.smart_button_rounded,
             onPressed: () => _onSelect('/buttons'),
