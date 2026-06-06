@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:smart_design_system/src/styles/index.dart';
 
 export 'src/widgets/index.dart';
 export 'src/utils/index.dart';
 export 'src/styles/index.dart';
 
 class SmartDesignSystem extends InheritedWidget {
-  final ColorScheme colorScheme;
-  final ValueChanged<ColorScheme> changeColorScheme;
+  final SmartColors colorScheme;
+  final ValueChanged<SmartColors> changeColorScheme;
 
   const SmartDesignSystem({
     super.key,

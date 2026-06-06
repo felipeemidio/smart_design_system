@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:smart_design_system/smart_design_system.dart';
+import 'package:smart_design_system/src/styles/default_smart_colors.dart';
 
 class SmartProvider extends StatefulWidget {
-  final Color? overlayColor;
+  final Brightness defaultBrightness;
   final Widget Function(BuildContext context) builder;
   const SmartProvider({
     super.key,
     required this.builder,
-    this.overlayColor,
+    this.defaultBrightness = Brightness.light,
   });
 
   @override
@@ -15,17 +16,18 @@ class SmartProvider extends StatefulWidget {
 }
 
 class _SmartProviderState extends State<SmartProvider> {
-  ColorScheme colors = SmartColors.deafultScheme;
+  late SmartColors colors;
 
   @override
   initState() {
     super.initState();
+    colors = widget.defaultBrightness == Brightness.light ? defaultLightSmartColors : defaultDarkSmartColors;
   }
 
-  onChangeColorScheme(ColorScheme colorScheme) {
-    print('ColorScheme changed');
+  onChangeColorScheme(SmartColors newSmartColors) {
+    print('SmartColors changed');
     setState(() {
-      colors = colorScheme;
+      colors = newSmartColors;
     });
   }
 

@@ -28,14 +28,14 @@ final GoRouter _router = GoRouter(
           path: '/dashboard',
           pageBuilder: (context, state) => buildCustomTransitionPage(
             state: state,
-            child: const DashboardPage(), // Use const if possible
+            child: const DashboardPage(),
           ),
         ),
         GoRoute(
           path: '/buttons',
           pageBuilder: (context, state) => buildCustomTransitionPage(
             state: state,
-            child: const ButtonsPage(), // Use const if possible
+            child: const ButtonsPage(),
           ),
         ),
       ],
@@ -49,13 +49,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SmartProvider(
+      defaultBrightness: MediaQuery.platformBrightnessOf(context),
       builder: (context) => MaterialApp.router(
         debugShowCheckedModeBanner: false,
         title: 'Smart Design System',
-        theme: ThemeData(
-          colorScheme: SmartDesignSystem.of(context).colorScheme,
-        ),
-        // home: const HomePage(),
+        theme: SmartDesignSystem.of(context).colorScheme.theme(),
         routerConfig: _router,
       ),
     );
