@@ -35,7 +35,7 @@ class ButtonsPage extends StatelessWidget {
               SmartFilledButton(
                 icon: Icons.bug_report,
                 label: 'Filled custom',
-                backgroundColor: Colors.purple,
+                backgroundColor: SmartDesignSystem.of(context).colorScheme.secondary,
                 onPressed: () => SmartSnackBarUtils.info(context, message: 'Hello, from Custom Filled Button'),
               ),
             ],
@@ -60,7 +60,7 @@ class ButtonsPage extends StatelessWidget {
               SmartOutlinedButton(
                 icon: Icons.bug_report,
                 label: 'Outlined custom',
-                color: Colors.purple,
+                color: SmartDesignSystem.of(context).colorScheme.secondary,
                 onPressed: () => SmartSnackBarUtils.info(context, message: 'Hello, from Custom Outlined Button'),
               ),
             ],
@@ -85,7 +85,7 @@ class ButtonsPage extends StatelessWidget {
               SmartTextButton(
                 icon: Icons.bug_report,
                 label: 'Text custom',
-                color: Colors.purple,
+                color: SmartDesignSystem.of(context).colorScheme.secondary,
                 onPressed: () => SmartSnackBarUtils.info(context, message: 'Hello, from Custom Text Button'),
               ),
             ],

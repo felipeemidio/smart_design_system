@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:smart_design_system/smart_design_system.dart';
 
 class SmartRailMenu {
   final String? id;
@@ -54,9 +55,10 @@ class _SmartRailState extends State<SmartRail> {
       children: [
         NavigationRail(
           extended: widget.expanded,
-          backgroundColor: Theme.of(context).colorScheme.surfaceContainerHighest,
           selectedIndex: seletectedIndex,
           trailing: widget.trailing,
+          indicatorColor: SmartDesignSystem.of(context).colorScheme.primary,
+          selectedIconTheme: IconThemeData(color: SmartDesignSystem.of(context).colorScheme.onPrimary),
           destinations: widget.menus
               .map((e) => NavigationRailDestination(icon: Icon(e.icon), label: Text(e.label)))
               .toList(),
