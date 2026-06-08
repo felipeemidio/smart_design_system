@@ -38,6 +38,12 @@ class _HomePageState extends State<HomePage> {
             icon: Icons.smart_button_rounded,
             onPressed: () => _onSelect('/buttons'),
           ),
+          SmartRailMenu(
+            id: '/typography',
+            label: 'Typography',
+            icon: Icons.text_fields,
+            onPressed: () => _onSelect('/typography'),
+          ),
         ],
         trailing: Expanded(
           child: Padding(

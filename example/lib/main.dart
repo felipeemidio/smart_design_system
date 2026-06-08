@@ -1,6 +1,7 @@
 import 'package:example/pages/buttons_page.dart';
 import 'package:example/pages/dashboard_page.dart';
 import 'package:example/pages/home_page.dart';
+import 'package:example/pages/typography_page.dart';
 import 'package:example/utils/animation_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_web_plugins/url_strategy.dart';
@@ -36,6 +37,13 @@ final GoRouter _router = GoRouter(
           pageBuilder: (context, state) => buildCustomTransitionPage(
             state: state,
             child: const ButtonsPage(),
+          ),
+        ),
+        GoRoute(
+          path: '/typography',
+          pageBuilder: (context, state) => buildCustomTransitionPage(
+            state: state,
+            child: const TypographyPage(),
           ),
         ),
       ],

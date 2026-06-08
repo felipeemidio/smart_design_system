@@ -1,3 +1,4 @@
+import 'package:example/widgets/page_tamplate.dart';
 import 'package:flutter/material.dart';
 
 class DashboardPage extends StatelessWidget {
@@ -5,17 +6,12 @@ class DashboardPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(24),
-      child: Column(
-        children: [
-          Center(
-            child: Text(
-              'Welcome to our Smart Design System',
-              style: Theme.of(context).textTheme.headlineLarge,
-            ),
-          ),
-        ],
+    return PageTemplate(
+      child: Center(
+        child: Text(
+          'Welcome to our Smart Design System',
+          style: Theme.of(context).textTheme.headlineLarge,
+        ),
       ),
     );
   }

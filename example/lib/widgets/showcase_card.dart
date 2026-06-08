@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:smart_design_system/smart_design_system.dart';
 
 class ShowcaseCard extends StatelessWidget {
   final String title;
-  final List<Widget> children;
-  const ShowcaseCard({super.key, required this.title, this.children = const []});
+  final Widget child;
+  const ShowcaseCard({super.key, required this.title, required this.child});
 
   @override
   Widget build(BuildContext context) {
@@ -14,12 +15,8 @@ class ShowcaseCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           spacing: 16,
           children: [
-            Text(title, style: Theme.of(context).textTheme.titleSmall),
-            Wrap(
-              spacing: 8,
-              runSpacing: 8,
-              children: children,
-            ),
+            Text(title, style: SmartDesignSystem.of(context).smartTypography.title4),
+            child,
           ],
         ),
       ),
