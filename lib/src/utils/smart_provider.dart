@@ -27,7 +27,6 @@ class _SmartProviderState extends State<SmartProvider> {
   }
 
   onChangeColorScheme(SmartColors newSmartColors) {
-    print('SmartColors changed');
     setState(() {
       colors = newSmartColors;
     });

@@ -1,4 +1,5 @@
 import 'package:example/pages/buttons_page.dart';
+import 'package:example/pages/colors_page.dart';
 import 'package:example/pages/dashboard_page.dart';
 import 'package:example/pages/home_page.dart';
 import 'package:example/pages/typography_page.dart';
@@ -33,10 +34,10 @@ final GoRouter _router = GoRouter(
           ),
         ),
         GoRoute(
-          path: '/buttons',
+          path: '/colors',
           pageBuilder: (context, state) => buildCustomTransitionPage(
             state: state,
-            child: const ButtonsPage(),
+            child: const ColorsPage(),
           ),
         ),
         GoRoute(
@@ -44,6 +45,13 @@ final GoRouter _router = GoRouter(
           pageBuilder: (context, state) => buildCustomTransitionPage(
             state: state,
             child: const TypographyPage(),
+          ),
+        ),
+        GoRoute(
+          path: '/buttons',
+          pageBuilder: (context, state) => buildCustomTransitionPage(
+            state: state,
+            child: const ButtonsPage(),
           ),
         ),
       ],

@@ -29,7 +29,7 @@ final defaultLightSmartColors = SmartColors(
   onWarningContainer: Color(0xff6f3811),
   background: Color(0xfffbf8ff),
   onBackground: Color(0xff1b1b21),
-  outline: Color(0xff767680),
+  outline: Color(0xff353536),
   disabled: Color(0xffdbd9e0),
   onDisabled: Color(0xff767680),
   card: Color(0xffefedf4),

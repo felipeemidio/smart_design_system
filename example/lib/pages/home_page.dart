@@ -33,16 +33,22 @@ class _HomePageState extends State<HomePage> {
             onPressed: () => _onSelect('/dashboard'),
           ),
           SmartRailMenu(
-            id: '/buttons',
-            label: 'Buttons',
-            icon: Icons.smart_button_rounded,
-            onPressed: () => _onSelect('/buttons'),
+            id: '/colors',
+            label: 'Colors',
+            icon: Icons.color_lens,
+            onPressed: () => _onSelect('/colors'),
           ),
           SmartRailMenu(
             id: '/typography',
             label: 'Typography',
             icon: Icons.text_fields,
             onPressed: () => _onSelect('/typography'),
+          ),
+          SmartRailMenu(
+            id: '/buttons',
+            label: 'Buttons',
+            icon: Icons.smart_button_rounded,
+            onPressed: () => _onSelect('/buttons'),
           ),
         ],
         trailing: Expanded(
