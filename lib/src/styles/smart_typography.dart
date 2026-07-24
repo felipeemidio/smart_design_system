@@ -39,7 +39,7 @@ class SmartTypography {
       body1: TextStyle(fontSize: 14, fontWeight: FontWeight.w400, height: 1.2),
       body2: TextStyle(fontSize: 12, fontWeight: FontWeight.w400, height: 1.2),
       button: TextStyle(fontSize: 14, fontWeight: FontWeight.w600, height: 1),
-      label: TextStyle(fontSize: 12, fontWeight: FontWeight.w400, height: 1),
+      label: TextStyle(fontSize: 14, fontWeight: FontWeight.w400, height: 1),
     );
   }
 }

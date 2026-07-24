@@ -51,14 +51,19 @@ class _SmartRailState extends State<SmartRail> {
 
   @override
   Widget build(BuildContext context) {
+    final designSystem = SmartDesignSystem.of(context);
     return Row(
       children: [
         NavigationRail(
           extended: widget.expanded,
           selectedIndex: seletectedIndex,
           trailing: widget.trailing,
-          indicatorColor: SmartDesignSystem.of(context).colorScheme.primary,
-          selectedIconTheme: IconThemeData(color: SmartDesignSystem.of(context).colorScheme.onPrimary),
+          indicatorColor: designSystem.colorScheme.primary,
+          selectedIconTheme: IconThemeData(color: designSystem.colorScheme.onPrimary),
+          selectedLabelTextStyle: designSystem.smartTypography.button.copyWith(color: designSystem.colorScheme.primary),
+          unselectedLabelTextStyle: designSystem.smartTypography.button.copyWith(
+            color: designSystem.colorScheme.onBackground,
+          ),
           destinations: widget.menus
               .map((e) => NavigationRailDestination(icon: Icon(e.icon), label: Text(e.label)))
               .toList(),
