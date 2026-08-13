@@ -52,6 +52,11 @@ class _HomePageState extends State<HomePage> {
       label: 'Text Fields',
       icon: Icons.format_shapes,
     ),
+    RouteMenu(
+      route: '/breakpoints',
+      label: 'Breakpoints',
+      icon: Icons.phonelink_outlined,
+    ),
   ];
 
   void _onSelect(String path) {

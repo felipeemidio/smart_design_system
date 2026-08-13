@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:smart_design_system/src/styles/index.dart';
 import 'package:smart_design_system/src/styles/smart_typography.dart';
 
+export 'src/responsiveness/index.dart';
 export 'src/widgets/index.dart';
 export 'src/utils/index.dart';
 export 'src/styles/index.dart';

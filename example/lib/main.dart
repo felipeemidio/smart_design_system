@@ -1,3 +1,4 @@
+import 'package:example/pages/breakpoints_page.dart';
 import 'package:example/pages/buttons_page.dart';
 import 'package:example/pages/colors_page.dart';
 import 'package:example/pages/dashboard_page.dart';
@@ -60,6 +61,13 @@ final GoRouter _router = GoRouter(
           pageBuilder: (context, state) => buildCustomTransitionPage(
             state: state,
             child: const TextFormFieldsPage(),
+          ),
+        ),
+        GoRoute(
+          path: '/breakpoints',
+          pageBuilder: (context, state) => buildCustomTransitionPage(
+            state: state,
+            child: const BreakpointsPage(),
           ),
         ),
       ],

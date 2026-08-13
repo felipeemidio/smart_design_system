@@ -34,14 +34,16 @@ class _SmartProviderState extends State<SmartProvider> {
 
   @override
   Widget build(BuildContext context) {
-    return SmartDesignSystem(
-      colorScheme: colors,
-      smartTypography: typography,
-      changeColorScheme: onChangeColorScheme,
-      child: Builder(
-        builder: (context) {
-          return widget.builder(context);
-        },
+    return SmartBreakpointsProvider(
+      child: SmartDesignSystem(
+        colorScheme: colors,
+        smartTypography: typography,
+        changeColorScheme: onChangeColorScheme,
+        child: Builder(
+          builder: (context) {
+            return widget.builder(context);
+          },
+        ),
       ),
     );
   }
